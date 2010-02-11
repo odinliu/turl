@@ -47,7 +47,7 @@ public class Digester {
 			}
 		}
 
-		return hex.toString();
+		return hex.toString().toUpperCase();
 	}
 
 	/**

@@ -15,7 +15,8 @@
  */
 package org.odichy.turl;
 
-import org.apache.commons.codec.digest.DigestUtils;
+import java.math.BigInteger;
+import org.odichy.turl.util.Digester;
 
 /**
  * This class shorten url based on 32 characters
@@ -26,18 +27,20 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class UrlShorter32 {
 	private char[] base32;
 	private String url;
-	private String sha1;
+	private String codec;
 	private String[] tiny;
 	private int index;
 
 	public UrlShorter32(String url) {
-		base32 = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+		base32 = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 		          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
 		          'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
 		          'y', 'z', '2', '3', '4', '5', '6', '7'};
 		this.url = url;
-		this.sha1 = DigestUtils.shaHex(url);
 		this.index = 0;
+		Digester digester = new Digester();
+		this.codec = digester.md5Hex(url);
+		this.tiny = new String[4];
 		build();
 	}
 
@@ -46,13 +49,14 @@ public class UrlShorter32 {
 	 * urls. This is the main algorithm.
 	 */
 	private void build() {
-		int length = this.sha1.length();
+		int length = this.codec.length();
 		int sublength = length / 8;
 		StringBuilder sb = new StringBuilder();
 
 		for(int i=0;i<sublength;i++) {
-			String subs = this.sha1.substring(i*8, 8);
-			int temp = 0x3fffffff & Integer.parseInt(subs, 16);
+			String subs = this.codec.substring(i*8, i*8+8);
+			BigInteger bi = new BigInteger(subs, 16);
+			int temp = 0x3fffffff & bi.intValue();
 
 			for(int j=0;j<6;j++) {
 				int var = 0x1f & temp;

@@ -26,5 +26,8 @@ public class Main {
 		String url = "http://odichy.org/";
 		UrlShorter32 shorter = new UrlShorter32(url);
 		System.out.println(shorter.getShortenUrl());
+		for(int i=0;i<3;i++) {
+			System.out.println(shorter.next());
+		}
 	}
 }
