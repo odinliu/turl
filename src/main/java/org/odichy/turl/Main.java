@@ -24,10 +24,19 @@ package org.odichy.turl;
 public class Main { 
 	public static void main(String[] args) {
 		String url = "http://odichy.org/";
+		if(args.length==1) {
+			url = args[0];
+		}
 		UrlShorter32 shorter = new UrlShorter32(url);
 		System.out.println(shorter.getShortenUrl());
 		for(int i=0;i<3;i++) {
 			System.out.println(shorter.next());
+		}
+
+		UrlShorter64 shorter64 = new UrlShorter64(url);
+		System.out.println("follow shorten urls is based on 64");
+		for(int i=0;i<2;i++) {
+			System.out.println(shorter64.getShortenUrl(i));
 		}
 	}
 }
