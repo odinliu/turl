@@ -32,10 +32,10 @@ public class UrlShorter32 {
 	private int index;
 
 	public UrlShorter32(String url) {
-		base32 = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-		          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-		          'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-		          'y', 'z', '2', '3', '4', '5', '6', '7'};
+		base32 = new char[] {'j', '3', 'n', '5', 'o', 'g', 'q', 'm',
+		          's', 'p', 'l', '7', 'b', 't', '2', 'h',
+		          'i', 'f', 'r', 'y', 'a', '6', 'u', 'w',
+		          'e', 'd', 'z', 'x', 'c', 'v', 'k', '4'};
 		this.url = url;
 		this.index = 0;
 		Digester digester = new Digester();

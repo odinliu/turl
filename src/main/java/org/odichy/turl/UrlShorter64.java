@@ -32,14 +32,14 @@ public class UrlShorter64 {
 	private int index;
 
 	public UrlShorter64(String url) {
-		base64 = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-		          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-		          'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-		          'y', 'z', '0', '1', '2', '3', '4', '5',
-		          '6', '7', '8', '9', 'A', 'B', 'C', 'D',
-		          'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-		          'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-		          'U', 'V', 'W', 'X', 'Y', 'Z', '_', '-'};
+		base64 = new char[] {'n', 'o', 'O', 'r', 'X', 'L', 'N', 'v',
+		          'J', 'l', 'E', 'T', 'c', '6', 'Z', 'b',
+		          '5', '7', 'B', '0', 'e', 'I', 'Q', 'M',
+		          'm', 'x', 'Y', 'U', '1', 'G', 'K', 'k',
+		          'P', 'j', '9', 'S', 't', 'i', 'w', 'a',
+		          's', 'F', 'C', 'D', '3', 'R', 'W', 'y',
+		          '4', 'H', '-', 'q', 'g', 'u', 'd', 'h',
+		          'p', '_', 'z', 'A', '2', 'V', 'f', '8'};
 		this.url = url;
 		this.index = 0;
 		Digester digester = new Digester();
