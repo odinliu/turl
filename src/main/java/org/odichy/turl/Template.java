@@ -21,5 +21,5 @@ package org.odichy.turl;
  * @author <a href="mailto:odinushuaia@gmail.com">LIU YIDING(Odin)</a>
  * @version 1.0
  */
-public class Template { 
+public class App { 
 }
