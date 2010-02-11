@@ -27,17 +27,17 @@ public class UrlShorter32 {
 	private char[] base32;
 	private String url;
 	private String sha1;
-	private String[4] tiny;
+	private String[] tiny;
 	private int index;
 
 	public UrlShorter32(String url) {
-		base32 = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+		base32 = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 		          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
 		          'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
 		          'y', 'z', '2', '3', '4', '5', '6', '7'};
 		this.url = url;
 		this.sha1 = DigestUtils.shaHex(url);
-		this,index = 0;
+		this.index = 0;
 		build();
 	}
 
